@@ -1,0 +1,10 @@
+<div *ngIf="user">
+    <h2>{{ user.name }} {{ user.surname }}</h2>
+    <p><strong>Gender:</strong> {{ user.gender }}</p>
+    <p><strong>Birthdate:</strong> {{ user.birthdate | date }}</p>
+    <p><strong>Work Address:</strong> {{ user.workAddress?.address }}</p>
+    <p><strong>Home Address:</strong> {{ user.homeAddress?.address }}</p>
+  </div>
+  <div *ngIf="!user">
+    <p>User not found.</p>
+  </div>

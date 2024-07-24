@@ -1,0 +1,30 @@
+<div>
+    <h2>Register User</h2>
+    <form *ngIf="user" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" [(ngModel)]="user.name" name="name" required>
+      </div>
+      <div>
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" [(ngModel)]="user.surname" name="surname" required>
+      </div>
+      <div>
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" [(ngModel)]="user.gender" name="gender" required>
+      </div>
+      <div>
+        <label for="birthdate">Birthdate:</label>
+        <input type="date" id="birthdate" [(ngModel)]="user.birthdate" name="birthdate" required>
+      </div>
+      <div *ngIf="user.workAddress">
+        <label for="workAddress">Work Address:</label>
+        <textarea id="workAddress" [(ngModel)]="user.workAddress.address" name="workAddress"></textarea>
+      </div>
+      <div *ngIf="user.homeAddress">
+        <label for="homeAddress">Home Address:</label>
+        <textarea id="homeAddress" [(ngModel)]="user.homeAddress.address" name="homeAddress"></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
